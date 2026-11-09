@@ -833,6 +833,7 @@ footer.site .bbb-fcard b{color:#123a5c}
       if(!msg)return;
       var honey=form.querySelector('[name="_honey"]');
       if(honey&&honey.value){setMsg(msg,'ok','Thanks \u2014 we\u2019ll be in touch.');return;}
+      if(performance.now()<3000){setMsg(msg,'err','Please take a moment to check your details, then send again.');return;}
       var req=form.querySelectorAll('[required]');
       for(var i=0;i<req.length;i++){
         if(!req[i].value.trim()){
